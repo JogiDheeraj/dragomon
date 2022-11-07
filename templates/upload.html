@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Upload Image</title>
+        <meta charset="UTF-8">
+    </head>
+    <body style="background-color:#f0f6ff; padding-top:30px;">
+        <div style="background-color:#f0f6ff;">
+            <br>
+            <br>
+            {% if msg %}
+            <h1 style="text-align:center;">
+                {{ msg }}
+            </h1>
+            {% endif %}
+            <h1 style="text-align:center; font-size:175%">UPLOAD NEW FILE</h1>
+            <form style="text-align:center; font-size:125%" method=post enctype=multipart/form-data>
+                <p><input type=file name=file><input type=submit value=Upload>
+                </p>
+            </form>
+            <h1 style="text-align:center; font-size:175%">RESULT:</h1>
+                {% if extracted_text %}
+                <p style="font-size:125%; text-align:center;"> The extracted text from the uploaded image and its translation is: 
+                <p style="font-size:125%; text-align:center;">
+                <b> {{ extracted_text }} </b>
+                </p>
+                </p>
+                {% else %}
+                <p style="font-size:125%; text-align:center;">
+                The extracted text and its translation will be displayed here
+                </p>
+                {% endif %}
+            <br>
+            <br>
+    </body>
+</html>
